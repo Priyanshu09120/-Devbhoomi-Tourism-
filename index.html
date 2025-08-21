@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttarakhand Tourism - Discover the Land of Gods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="img/logo.jpg" alt="Uttarakhand Tourism Logo" class="nav__logo-img">
+                <h2>Devbhoomi Tourism</h2>
+            </div>
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#destinations" class="nav__link">Destinations</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#treks" class="nav__link">Treks</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#explore" class="nav__link">Explore</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#booking" class="nav__link">Book</a>
+                </li>
+            </ul>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+   <section class="hero">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="hero__video">
+    <source src="img/background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="hero__overlay"></div>
+
+  <!-- Content -->
+  <div class="hero__content container">
+    <h1 class="hero__title">Discover the Mystical Beauty of Uttarakhand</h1>
+    <p class="hero__subtitle">
+      Experience the spiritual journey through pristine mountains, sacred temples,
+      and breathtaking landscapes in the Land of Gods
+    </p>
+    <a href="#booking" class="btn btn--primary btn--lg hero__cta">Plan Your Journey</a>
+  </div>
+</section>
+
+
+    <!-- Booking Form Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking__wrapper">
+                <h2 class="booking__title">Plan Your Perfect Trip</h2>
+                <p class="booking__subtitle">Fill in the details below and we'll find the best packages for you</p>
+                
+                <form class="booking__form" id="booking-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="name">
+                                Full Name <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Enter your full name"
+                                required
+                                minlength="2"
+                            >
+                            <div class="form-error" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                Email Address <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                class="form-control" 
+                                id="email" 
+                                name="email" 
+                                placeholder="Enter your email address"
+                                required
+                            >
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">
+                                Phone Number <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="tel" 
+                                class="form-control" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="Enter your phone number"
+                                required
+                                pattern="[0-9]{10}"
+                            >
+                            <div class="form-error" id="phone-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="location">
+                                Choose Destination <span class="required">*</span>
+                            </label>
+                            <select class="form-control" id="location" name="location" required>
+                                <option value="">Select Location</option>
+                                <option value="rishikesh">Rishikesh</option>
+                                <option value="mussorie">Mussorie</option>
+                                <option value="tehri">Tehri</option>
+                                <option value="nainital">Nainital</option>
+                                <option value="kedarnath">Kedarnath</option>
+                                <option value="badrinath">Badrinath</option>
+                            </select>
+                            <div class="form-error" id="location-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="checkin">
+                                Check-in Date <span class="required">*</span>
+                            </label>
+                            <input type="date" class="form-control" id="checkin" name="checkin" required>
+                            <div class="form-error" id="checkin-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="checkout">
+                                Check-out Date <span class="required">*</span>
+                            </label>
+                            <input type="date" class="form-control" id="checkout" name="checkout" required>
+                            <div class="form-error" id="checkout-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="people">
+                                Number of People <span class="required">*</span>
+                            </label>
+                            <select class="form-control" id="people" name="people" required>
+                                <option value="">Select</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6+ People</option>
+                            </select>
+                            <div class="form-error" id="people-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="message">
+                            Special Requirements (Optional)
+                        </label>
+                        <textarea 
+                            class="form-control" 
+                            id="message" 
+                            name="message" 
+                            rows="3"
+                            placeholder="Any special requirements or preferences..."
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn--primary btn--full-width" id="submit-btn">
+                            <span class="btn-text">Search Packages</span>
+                            <span class="btn-loading hidden">
+                                <span class="loading-spinner"></span>
+                                Searching...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="form-message" class="form-message hidden"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Destinations</h2>
+                <p class="section-subtitle">Explore the most breathtaking locations in Uttarakhand</p>
+            </div>
+            <div class="destinations__grid">
+                <div class="destination-card" data-destination="harshil-valley">
+                    <div class="destination-card__image">
+                        <img src="img/harshil.jpeg" alt="Harshil Valley" loading="lazy">
+                    </div>
+                    <div class="destination-card__content">
+                        <h3 class="destination-card__title">Harshil Valley</h3>
+                        <p class="destination-card__description">Pristine valley with colorful prayer flags and snow-capped peaks</p>
+                        <div class="destination-card__info">
+                            <span class="destination-card__duration">2N/3D</span>
+                            <span class="destination-card__price">₹4,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-destination="panch-kedar">
+                    <div class="destination-card__image">
+                        <img src="img/panchkedar.jpeg"  alt="Panch Kedar" loading="lazy">
+                    </div>
+                    <div class="destination-card__content">
+                        <h3 class="destination-card__title">Panch Kedar</h3>
+                        <p class="destination-card__description">Five sacred Shiva temples in the Himalayas</p>
+                        <div class="destination-card__info">
+                            <span class="destination-card__duration">7N/8D</span>
+                            <span class="destination-card__price">₹15,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-destination="tungnath-chopta">
+                    <div class="destination-card__image">
+                        <img src= "img/tungnath.jpeg" alt="Tungnath-Chopta" loading="lazy">
+                    </div>
+                    <div class="destination-card__content">
+                        <h3 class="destination-card__title">Tungnath-Chopta</h3>
+                        <p class="destination-card__description">Highest Shiva temple with panoramic mountain views</p>
+                        <div class="destination-card__info">
+                            <span class="destination-card__duration">2N/3D</span>
+                            <span class="destination-card__price">₹7,999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-destination="valley-of-flowers">
+                    <div class="destination-card__image">
+                        <img src="img/valley of flowers.jpeg"  alt="Valley of Flowers" loading="lazy">
+                    </div>
+                    <div class="destination-card__content">
+                        <h3 class="destination-card__title">Valley of Flowers</h3>
+                        <p class="destination-card__description">UNESCO World Heritage site with alpine flowers</p>
+                        <div class="destination-card__info">
+                            <span class="destination-card__duration">3N/4D</span>
+                            <span class="destination-card__price">₹9,999</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treks Section -->
+    <section class="treks" id="treks">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Treks</h2>
+                <p class="section-subtitle">Challenge yourself with these incredible trekking experiences</p>
+            </div>
+            <div class="treks__grid">
+                <div class="trek-card" data-trek="auli">
+                    <div class="trek-card__image">
+                        <img src="auli.jpeg" alt="Trekking in Auli" loading="lazy">
+                        <div class="trek-card__discount">15% Off</div>
+                    </div>
+                    <div class="trek-card__content">
+                        <h3 class="trek-card__title">Trekking in Auli, Auli</h3>
+                        <p class="trek-card__includes">Hotel, Breakfast, Tours, Transport</p>
+                        <p class="trek-card__description">Beautiful artificial lake surrounded by snow peaks</p>
+                        <div class="trek-card__stats">
+                            <span class="trek-card__likes">❤️ 1,245</span>
+                            <span class="trek-card__comments">💬 286</span>
+                        </div>
+                        <div class="trek-card__price">₹2,499/Day</div>
+                    </div>
+                </div>
+                
+                <div class="trek-card" data-trek="gaumukh">
+                    <div class="trek-card__image">
+                        <img src="gaumukh.jpeg"Gaumukh Trek" loading="lazy">
+                        <div class="trek-card__discount">10% Off</div>
+                    </div>
+                    <div class="trek-card__content">
+                        <h3 class="trek-card__title">Gaumukh Trek</h3>
+                        <p class="trek-card__includes">Hotel, Breakfast, Tours, Transport</p>
+                        <p class="trek-card__description">Source of river Ganges with colorful mountain village</p>
+                        <div class="trek-card__stats">
+                            <span class="trek-card__likes">❤️ 1,615</span>
+                            <span class="trek-card__comments">💬 583</span>
+                        </div>
+                        <div class="trek-card__price">₹1,799/Day</div>
+                    </div>
+                </div>
+                
+                <div class="trek-card" data-trek="har-ki-dun">
+                    <div class="trek-card__image">
+                        <img src= "har ki dun.jpeg"alt="Har Ki Dun" loading="lazy">
+                        <div class="trek-card__discount">15% Off</div>
+                    </div>
+                    <div class="trek-card__content">
+                        <h3 class="trek-card__title">Har Ki Dun, Dehradun</h3>
+                        <p class="trek-card__includes">Hotel, Breakfast, Tours, Transport</p>
+                        <p class="trek-card__description">Winter wonderland with snow-covered landscapes</p>
+                        <div class="trek-card__stats">
+                            <span class="trek-card__likes">❤️ 595</span>
+                            <span class="trek-card__comments">💬 163</span>
+                        </div>
+                        <div class="trek-card__price">₹2,799/Day</div>
+                    </div>
+                </div>
+                
+                <div class="trek-card" data-trek="nanda-devi">
+                    <div class="trek-card__image">
+                        <img src="nanda devi.jpeg"alt="Nanda Devi Trek" loading="lazy">
+                        <div class="trek-card__discount">20% Off</div>
+                    </div>
+                    <div class="trek-card__content">
+                        <h3 class="trek-card__title">Nanda Devi Trek</h3>
+                        <p class="trek-card__includes">Hotel, Breakfast, Tours, Transport</p>
+                        <p class="trek-card__description">Horses grazing in meadows with mountain backdrop</p>
+                        <div class="trek-card__stats">
+                            <span class="trek-card__likes">❤️ 2,415</span>
+                            <span class="trek-card__comments">💬 1,294</span>
+                        </div>
+                        <div class="trek-card__price">₹3,499/Day</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section class="explore" id="explore">
+        <div class="container">
+            <div class="explore__content">
+                <div class="explore__destinations">
+                    <h2 class="explore__title">Explore Uttarakhand</h2>
+                    <div class="explore__list">
+                        <span class="explore__item">Rishikesh</span>
+                        <span class="explore__item">Mussorie</span>
+                        <span class="explore__item">Tehri</span>
+                        <span class="explore__item">Mana</span>
+                        <span class="explore__item">Nainital</span>
+                        <span class="explore__item">Bhimtal</span>
+                        <span class="explore__item">Kedarnath</span>
+                        <span class="explore__item">Badrinath</span>
+                        <span class="explore__item">Gangotri</span>
+                        <span class="explore__item">Yamunotri</span>
+                    </div>
+                </div>
+                <div class="explore__stats">
+                    <div class="stat-card">
+                        <div class="stat-card__number">500+</div>
+                        <div class="stat-card__label">Destinations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">10K+</div>
+                        <div class="stat-card__label">Happy Travelers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">50+</div>
+                        <div class="stat-card__label">Expert Guides</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <h3 class="footer__title">🏔️ Uttarakhand Tourism</h3>
+                    <p class="footer__contact">
+                        📞 +91 8439430425<br>
+                        📧 info@priyanshukanderi11@gmail.com<br>
+                        📍 Dehradun, Uttarakhand
+                    </p>
+                </div>
+                <div class="footer__quote">
+                    <p>"The mountains are calling and I must go." - John Muir</p>
+                    <p>Let Uttarakhand be your gateway to spiritual awakening and natural wonder.</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Uttarakhand Tourism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
